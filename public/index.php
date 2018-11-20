@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-require_once("../resources/config.php"); 
+require_once("../resources/config.php");
 
 ?>
 
@@ -12,206 +12,39 @@ require_once("../resources/config.php");
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/login.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-  <style>
-    .forgot {
-      color: white;
-      text-align: center;
-    }
-
-    .login-div {
-      height: 500px;
-      width: 400px;
-      border-radius: 20px;
-      background: linear-gradient(#96DFE2, #18B2F7);
-      color: white;
-      box-shadow: -2px 3px 12px #B4B4B4;
-
-    /* center it */
-    	position: absolute;
-    	top:0;
-    	bottom: 0;
-    	left: 0;
-    	right: 0;
-    	margin: auto;
-    }
-
-    .thin-header {
-      font-weight: lighter;
-      color: inherit;
-      text-align: center;
-      margin-top: 10%;
-    }
-
-    .login-form {
-      padding-left: 10%;
-      padding-right: 10%;
-      padding-top: 20%;
-    }
-
-    .login-input {
-      background-color: transparent;
-      border: none;
-      padding-bottom: 10px;
-      border-bottom: 1px solid white;
-      text-align: center;
-      border-radius: 0;
-      margin-bottom: 10%;
-      width: 100%;
-      font-size: 20px;
-      color: white;
-    }
-
-    .login-input::placeholder {
-      color: white;
-      font-size: 20px;
-      font-weight: normal;
-      opacity: 1
-    }
-
-    .login-label{
-      text-align: center !important;
-    }
-
-    /* dope login button  */
-    .btn-container {
-      width: 130px;
-      height: 40px;
-      text-align: center;
-      margin: 0 auto;
-      margin-top: 10%;
-    }
-    .form-button {
-      outline:none;
-      height: 40px;
-      text-align: center;
-      width: 130px;
-      border-radius:40px;
-      background: transparent;
-      border: 1px solid white;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: .02em;
-      font-weight: normal;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-    .form-button:hover {
-      color:white;
-      background: #96DFE2;
-    }
-    .form-button:active {
-      letter-spacing: 2px;
-      letter-spacing: 2px ;
-    }
-    .form-button:after {
-      content:"SUBMIT";
-    }
-    .onclic {
-      width: 40px;
-      border-color: white;
-      border-width:3px;
-      font-size:0;
-      border-left-color: #0886a2;
-      animation: rotating 2s 0.25s linear infinite;
-    }
-
-    .error-message {
-      width: 100%;
-      border-radius: 5px;
-      background: linear-gradient(to bottom left, #EF8D9C 40%, #f97c8f 100%);
-      color: white;
-      text-align: center;
-      padding-top: 5px;
-      padding-bottom: 5px;
-       box-shadow: 5px 5px 20px rgba(#303030, 10%);
-       z-index: 1;
-    }
-
-    .alert {
-      font-weight: 700;
-      letter-spacing: 5px;
-      font-size: 0.9em;
-      text-transform: uppercase;
-    }
-    .onclic:after {
-        content:"";
-      }
-    @keyframes rotating {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    
-
-    .nav-style {
-      background-color: #4fcaea;
-    }
-
-    .link{
-      color: white;
-    }
-
-    .padding{
-      padding-right: 2%;
-      padding-left: 2%;
-    }
-  </style>
 </head>
 
-<body>
-
-  <nav class="nav-style">
-    <ul class="nav justify-content-center">
-      <li class="nav-item padding">
-        <a class="nav-link active link" href="index.html">Home</a>
-      </li>
-      <li class="nav-item padding">
-        <a class="nav-link link" href="register.html">Register</a>
-      </li>
-      <li class="nav-item padding">
-        <a class="nav-link link" href="AboutUs.html">About Us</a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="login">
-    <div class="login-div">
-      <h1 class="thin-header">Login</h1>
-      <div class="login-form">
-        <!-- need to prevent form from posting right away and redirect to welcome -->
-         
-            
-        <form method="post">
-         
-         <?php login_user(); ?>
-          <input class="login-input" type="email" name="email" placeholder="E-mail" required>
-          <input class="login-input" type="password" name="password" placeholder="Password" required>
-
-          
-
-            <div class="btn-container">
-              <input class="form-button" type="submit" name="submit" value="Submit">
-            </div>
-        </form>
-        
-          
-        <br>
-        <!-- error message -->
-         
-        <br>
-      </div>
-      
-      <div class="bg-warning">
-            <p ><?php display_message(); ?></p>
-            
+<body  id="LoginForm" style="height: 100vh">
+  <div class="container-fluid">
+  <div class="login-form" style="margin: 0 auto">
+  <div class="main-div">
+      <div class="panel">
+     <h1>Login</h1>
+     <p>Please enter your email and password</p>
+     </div>
+      <form id="Login" method="post">
+        <?php login_user(); ?>
+        <div class="error-message">
+          <p><?php display_message(); ?></p>
         </div>
+          <div class="form-group">
+              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+              <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+          </div>
+          <div class="forgot" style="text-align: center">
+            <a href="Register.html">Create an account?</a>
+          </div>
+          <button type="submit" name="submit" class="btn btn-primary">Login</button>
+      </form>
     </div>
+  </div>
+</div>
+</div>
 </body>
 </html>

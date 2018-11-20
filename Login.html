@@ -151,6 +151,8 @@
 
     .link{
       color: white;
+      text-decoration: none !important;
+      font-weight: lighter;
     }
 
     .padding{
@@ -160,8 +162,7 @@
   </style>
 </head>
 
-<body>
-
+<body style="background-color: #eaf4f7">
   <nav class="nav-style">
     <ul class="nav justify-content-center">
       <li class="nav-item padding">
@@ -180,7 +181,6 @@
     <div class="login-div">
       <h1 class="thin-header">Login</h1>
       <div class="login-form">
-        <!-- need to prevent form from posting right away and redirect to welcome -->
         <form>
           <input class="login-input" type="email" name="email" placeholder="E-mail" required>
           <input class="login-input" type="password" name="password" placeholder="Password" required>
