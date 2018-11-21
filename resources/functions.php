@@ -13,7 +13,6 @@ function set_message($msg){
     } else {
         $msg ="";
     }
-
 }
 
 function display_message(){
@@ -133,7 +132,6 @@ function add_user(){
     }
 }
 
-
 // Get Products
 
 function get_products(){
@@ -147,16 +145,16 @@ function get_products(){
 
         $product = <<<DELIMETER
 
-         <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail" style="margin-bottom:20px;">
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <div class="thumbnail" style="margin-bottom:20px;">
             <a href="itemDetail.php?id={$row['productId']}"><img src="../resources/$product_image" style="width:100%; height: 300px"></a>
             <div class="caption">
-                <h4 class="pull-right">R {$row['productSellingPrice']}</h4>
-                <h4><a href="itemDetail.php?id={$row['productId']}">{$row['productName']}</a></h4>
-                <a class="btn  btn-outline-info" href="../resources/cart.php?add={$row['productId']}">Add to cart</a>
+              <h4 class="pull-right">R {$row['productSellingPrice']}</h4>
+              <h4><a href="itemDetail.php?id={$row['productId']}">{$row['productName']}</a></h4>
+              <a class="btn  btn-outline-info" href="../resources/cart.php?add={$row['productId']}">Add to cart</a>
             </div>
+          </div>
         </div>
-    </div>
 
 DELIMETER;
 

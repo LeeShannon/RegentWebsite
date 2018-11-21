@@ -40,7 +40,7 @@
           <div >
             <a href="cart.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
                 <i class="fas fa-shopping-cart"></i>
-              </a>
+            </a>
           </div>
         </div>
 
