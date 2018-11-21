@@ -1,6 +1,5 @@
 body #LoginForm{
-  background-image: url("http://www.freebiesgallery.com/wp-content/uploads/2014/02/blurred-background-2.jpg");
-  /* background-image: url("blurred-background-2.jpg"); */
+  background-image: url("blurred-background-2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -27,7 +26,7 @@ h1{
 }
 .main-div {
   background: #ffffff none repeat scroll 0 0;
-  border-radius: 2px;
+  border-radius: 10px;
   margin: 10px auto 30px;
   max-width: 38%;
   padding: 50px 70px 70px 71px;

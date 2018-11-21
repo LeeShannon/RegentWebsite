@@ -68,7 +68,16 @@
                     <img class="item-cart" style="object-fit: cover" src="" >
                   </td>
                   <td> name </td>
-                  <td>100 kg</td>
+                  <td style="width: 200px">
+
+                    <div class="form-group row">
+                      <div class="col-sm-7">
+                        <input type="number" name="quantity" value="1" placeholder="100" min="1" class="form-control" />
+                      </div>
+                        <p>box</p>
+                    </div>
+
+                  </td>
                   <td>R 100</td>
                   <td>
                     R 100
@@ -104,7 +113,7 @@
                 <h2 style="padding-left: 2%; font-size: 20px;">Total: R 100</h2>
               </div>
               <div class="col-md-6 d-flex justify-content-end">
-                <input type="submit" name="checkout" value="Proceed to Checkout" id="button"class="btn btn-default">
+                <input type="submit" name="checkout" value="Proceed to Checkout" id="button" class="btn btn-default">
               </div>
             </div>
           </div>
