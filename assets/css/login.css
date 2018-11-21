@@ -1,9 +1,10 @@
-body#LoginForm{
-  background-image:url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:cover;
-  padding:10px;
+body #LoginForm{
+  background-image: url("http://www.freebiesgallery.com/wp-content/uploads/2014/02/blurred-background-2.jpg");
+  /* background-image: url("blurred-background-2.jpg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
 }
 
 h1{

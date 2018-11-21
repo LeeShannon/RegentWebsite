@@ -34,3 +34,8 @@ li a {
   font-size: 18px;
   letter-spacing: 0.10em;
 }
+
+.cart{
+  padding-right: 5px;
+  color: #e8e5e5;
+}
