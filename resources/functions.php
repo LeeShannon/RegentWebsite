@@ -1,6 +1,6 @@
 <?php
 
-
+$uploads = "uploads"; 
 /************************* HELPERS FUNCTIONS *************************/
 
 
@@ -63,10 +63,22 @@ function last_id(){
     
     return mysqli_insert_id($connection);
 }
+
+
+
+function display_image($picture){
+    
+    global $uploads;
+    
+    return $uploads. DS .$picture;
+}
+
+
 /************************* FRONT END GET PRODUCT *************************/
 function login_user(){
     
     if(isset($_POST['submit'])){
+       
         $email = escape_string($_POST['email']);
         $password = escape_string($_POST['password']);
         
@@ -89,6 +101,71 @@ function login_user(){
         
     }
 }
+
+function add_user(){
+    
+    if(isset($_POST['register'])){
+        
+        $userName = escape_string($_POST['fname']);
+        $userSurname = escape_string($_POST['sname']);
+        $email = escape_string($_POST['email']);
+        $userPhone = escape_string($_POST['phone']);
+        $userCountry = escape_string($_POST['country']);
+        $userCity = escape_string($_POST['city']);
+        $address = escape_string($_POST['address']);
+        $password= escape_string($_POST['password']);
+        $password2= escape_string($_POST['password2']);
+        
+        if($password != $password2){
+            
+            set_message("Please Ensure your passwords match.");
+            redirect("Register.php");
+        } else {
+            $query = query("INSERT INTO client(clientName, clientEmail, clientPhoneNumber, clientCity, clientCountry, clientSurname, clientPassPhrase, clientAddress) VALUES ('{$userName}','{$email}','{$userPhone}','{$userCity}','{$userCountry}','{$userSurname}','{$password}','{$address}')");
+        confirm($query);
+        
+        set_message("User Created");
+        
+        redirect("index.php");
+            
+        }       
+        
+    }
+}
+
+
+// Get Products
+
+function get_products(){
+    
+    $query = query("SELECT * FROM product");
+    confirm($query);
+    
+    while($row = fetch_array($query)){
+        
+        $product_image = display_image($row['productImgUrl']);
+        
+        $product = <<<DELIMETER
+        
+         <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail" style="margin-bottom:20px;">
+            <a href="itemDetail.php?id={$row['productId']}"><img src="../resources/$product_image" style="width:100%;"></a>
+            <div class="caption">
+                <h4 class="pull-right">R {$row['productSellingPrice']}</h4>
+                <h4><a href="itemDetail.php?id={$row['productId']}">{$row['productName']}</a></h4>
+                <a class="btn  btn-outline-info" href="../resources/cart.php?add={$row['productId']}">Add to cart</a>
+            </div>
+        </div>
+    </div>
+        
+DELIMETER;
+        
+        echo $product;
+    }
+    
+}
+
+// Get Products
 
 
 
