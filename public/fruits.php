@@ -58,10 +58,10 @@ require_once("../resources/config.php");
 
       <ul class="nav nav-tabs">
         <li class="nav-item" >
-          <a class="nav-link active" href="products.php" style="color: black !important; text-shadow: none" >All</a>
+          <a class="nav-link" href="products.php" style="color: black !important; text-shadow: none" >All</a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link" href="fruits.php" style="color: black !important; text-shadow: none" >Fruits</a>
+          <a class="nav-link active" href="fruits.php" style="color: black !important; text-shadow: none" >Fruits</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="veg.php" style="color: black !important; text-shadow: none">Vegetables</a>
