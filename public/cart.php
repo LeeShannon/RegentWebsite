@@ -104,7 +104,7 @@
                 <h2 style="padding-left: 2%; font-size: 20px;">Total: R 100</h2>
               </div>
               <div class="col-md-6 d-flex justify-content-end">
-                <input type="submit" name="checkout" value="Proceed to Checkout" class="btn btn-default">
+                <input type="submit" name="checkout" value="Proceed to Checkout" id="button"class="btn btn-default">
               </div>
             </div>
           </div>
