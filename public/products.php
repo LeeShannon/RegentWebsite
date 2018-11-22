@@ -19,7 +19,7 @@ require_once("../resources/config.php");
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   </head>
   <body>
-
+    
     <div class="pos-f-t">
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
@@ -34,6 +34,9 @@ require_once("../resources/config.php");
             <li >
               <a href="user.php">Edit Details</a>
             </li>
+            <li>
+              <a href="transactions.php">Transaction History</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -45,11 +48,12 @@ require_once("../resources/config.php");
         <!-- cart icon -->
         <div class="row d-flex justify-content-end" style="margin: 0;">
           <div >
-            <a href="checkout.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
+            <a href="cart.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
                 <i class="fas fa-shopping-cart"></i>
-              </a>
+            </a>
           </div>
         </div>
+
       </nav>
     </div>
 
@@ -67,8 +71,8 @@ require_once("../resources/config.php");
         <li class="nav-item">
           <a class="nav-link" href="veg.php" style="color: black !important; text-shadow: none">Vegetables</a>
         </li>
-        
-        
+
+
 -->
      <?php get_categories();?>
       </ul>
