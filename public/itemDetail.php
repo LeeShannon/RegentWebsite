@@ -1,3 +1,8 @@
+<?php 
+
+require_once("../resources/config.php"); 
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -49,33 +54,63 @@
         </button>
       </nav>
     </div>
+    
 
     <div class="container-fluid" style="padding-top: 3%">
+      
+       <?php 
+    
+    $query = query("SELECT * FROM product WHERE productId =".escape_string($_GET['id'])."");
+      
+      confirm($query);
+      
+      while($row = fetch_array($query)):
+          
+           
+      
+    
+   
+    
+    ?>
 
       <div class="row row-padding">
 
         <div class="col-lg-6" align="center">
-            <img class="item-detail-img" src="">
+            <img class="img-responsive" width="100%" src="../resources/<?php echo display_image($row['productImgUrl']);  ?>" alt="">
         </div>
 
         <div class="col-lg-6">
-          <h5>Item Name</h5>
+          <h5><?php echo $row['productName']; ?></h5>
           <hr style="margin-top: 10px; margin-bottom: 10px;">
-          <p class="desc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <hr style="margin-top: 10px; margin-bottom: 10px;">
+          <p class="desc"> <?php echo $row['productDescription']; ?></p>
+          <h5>Selling Policy:</h5>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Price:</label>
-            <div class="col-sm-4">
-              <p class="price">R 100</p>
+            <label class="col-sm-3 col-form-label">Unit : </label>
+            <div class="col-sm-3">
+              <p class="price"><?php echo $row['unit']; ?></p>
             </div>
           </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Unit Weight: </label>
+            <div class="col-sm-3">
+              <p class="price"><?php echo $row['weight']; ?> Kg</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Price/Unit: </label>
+            <div class="col-sm-3">
+              <p class="price">R <?php echo $row['productSellingPrice']; ?></p>
+            </div>
+          </div>
+          <hr style="margin-top: 10px; margin-bottom: 10px;">
+          
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Quantity:</label>
             <div class="col-sm-4">
               <input type="number" name="quantity" value="1" min="1" class="form-control" />
             </div>
             <div class="col-sm-4">
-              <p>kg</p>
+              <p><?php echo $row['unit']; ?>(s)</p>
             </div>
           </div>
           <br>
@@ -84,6 +119,8 @@
 
 
       </div>
+      
+      <?php endwhile; ?>
     </div>
 
     </div>

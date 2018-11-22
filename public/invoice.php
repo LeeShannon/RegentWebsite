@@ -1,8 +1,13 @@
-<?php
+<?php 
 
-require_once("../resources/config.php");
+require_once("../resources/config.php"); 
+require_once("../resources/cart.php"); 
 
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -34,7 +39,7 @@ button to tracking number
 
   <div class="row d-flex justify-content-left" style="margin: 0;">
     <div >
-      <a href="cart.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Back">
+      <a href="checkout.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Back">
           <i class="fas fa-chevron-circle-left" style="font-size: 25px"></i>
       </a>
     </div>
@@ -49,6 +54,11 @@ button to tracking number
      </div>
      <hr>
       <form id="Login">
+        
+        <?php 
+  process_customer_report();
+  
+?>
 
         <div style="margin: 15px">
           <div class="row">

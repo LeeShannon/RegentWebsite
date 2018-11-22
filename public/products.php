@@ -45,7 +45,7 @@ require_once("../resources/config.php");
         <!-- cart icon -->
         <div class="row d-flex justify-content-end" style="margin: 0;">
           <div >
-            <a href="cart.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
+            <a href="checkout.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Shopping cart">
                 <i class="fas fa-shopping-cart"></i>
               </a>
           </div>
@@ -60,12 +60,17 @@ require_once("../resources/config.php");
         <li class="nav-item" >
           <a class="nav-link active" href="products.php" style="color: black !important; text-shadow: none" >All</a>
         </li>
+<!--
         <li class="nav-item" >
           <a class="nav-link" href="fruits.php" style="color: black !important; text-shadow: none" >Fruits</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="veg.php" style="color: black !important; text-shadow: none">Vegetables</a>
         </li>
+        
+        
+-->
+     <?php get_categories();?>
       </ul>
 
 

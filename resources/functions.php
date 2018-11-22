@@ -13,6 +13,7 @@ function set_message($msg){
     } else {
         $msg ="";
     }
+
 }
 
 function display_message(){
@@ -91,8 +92,14 @@ function login_user(){
             redirect("index.php");
             exit();
         } else {
+            
+            while($row = fetch_array($query)){
+                
+            $_SESSION['username'] = $row['clientId'];
+            
+            }
 
-            $_SESSION['username'] = $email;
+            redirect("Website");
             redirect("Website");
         }
 
@@ -132,6 +139,27 @@ function add_user(){
     }
 }
 
+// Get Category
+
+function get_categories(){
+    
+        $query = query("SELECT * FROM category");
+        confirm($query);
+            
+            while($row = fetch_array($query)){
+                
+              $category_links = <<<DELIMETER
+              <li class="nav-item">
+           <a class="nav-link" href='categoryP.php?id={$row['categoryId']}' style="color: black !important; text-shadow: none">{$row['categoryName']}</a>
+        </li>
+              
+DELIMETER;
+                
+                echo $category_links;
+            }
+}
+
+
 // Get Products
 
 function get_products(){
@@ -145,16 +173,16 @@ function get_products(){
 
         $product = <<<DELIMETER
 
-        <div class="col-sm-4 col-lg-4 col-md-4">
-          <div class="thumbnail" style="margin-bottom:20px;">
+         <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail" style="margin-bottom:20px;">
             <a href="itemDetail.php?id={$row['productId']}"><img src="../resources/$product_image" style="width:100%; height: 300px"></a>
             <div class="caption">
-              <h4 class="pull-right">R {$row['productSellingPrice']}</h4>
-              <h4><a href="itemDetail.php?id={$row['productId']}">{$row['productName']}</a></h4>
-              <a class="btn  btn-outline-info" href="../resources/cart.php?add={$row['productId']}">Add to cart</a>
+                <h4 class="pull-right">R {$row['productSellingPrice']}</h4>
+                <h4><a href="itemDetail.php?id={$row['productId']}">{$row['productName']}</a></h4>
+                <a class="btn  btn-outline-info" href="../resources/cart.php?add={$row['productId']}">Add to cart</a>
             </div>
-          </div>
         </div>
+    </div>
 
 DELIMETER;
 
@@ -163,7 +191,58 @@ DELIMETER;
 
 }
 
-// Get Products
+// Get Products in categoryP page
+
+function get_products_in_cat_page(){
+    
+  
+    $query = query("SELECT product.* FROM product, subcategory WHERE product.subCategoryId = subcategory.subCategoryId AND subcategory.categoryId ='".escape_string($_GET['id'])."'");
+    
+    confirm($query);
+    
+    while($row = fetch_array($query)){
+        
+         $product_image = display_image($row['productImgUrl']);
+        
+        $product = <<<DELIMETER
+        
+         <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail" style="margin-bottom:20px;">
+            <a href="itemDetail.php?id={$row['productId']}"><img src="../resources/$product_image" style="width:100%; height: 300px"></a>
+            <div class="caption">
+                <h4 class="pull-right">R {$row['productSellingPrice']}</h4>
+                <h4><a href="itemDetail.php?id={$row['productId']}">{$row['productName']}</a></h4>
+                <a class="btn  btn-outline-info" href="../resources/cart.php?add={$row['productId']}">Add to cart</a>
+            </div>
+        </div>
+    </div>
+        
+DELIMETER;
+        
+        echo $product;
+    }
+    
+}
+
+// DropDown Shipment Company selection
+
+function show_shipment_checkout_page(){
+    
+        $query = query("SELECT * FROM shipment");
+        confirm($query);
+            
+            while($row = fetch_array($query)){
+                
+              $category_options = <<<DELIMETER
+              
+              
+              <option value="{$row['shipmentId']}">{$row['companyName']}</option>
+              
+DELIMETER;
+                
+                echo $category_options;
+            }
+}
 
 
 
