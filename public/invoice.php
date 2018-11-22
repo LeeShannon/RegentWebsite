@@ -41,41 +41,75 @@ button to tracking number
   </div>
 
   <div class="container-fluid">
-  <div class="login-form" style="margin: 0 auto">
-  <div class="main-div" style="width: 700px">
+  <div class="login-form">
+  <div class="invoice">
       <div class="panel">
      <h1>Invoice</h1>
      <p>Invoice number: 123123</p>
      </div>
      <hr>
       <form id="Login">
+        <div class="row">
+          <!-- supplier -->
+          <div class="col-md-6">
+            <div>
+              <h3>Supplier</h3>
+              <div style="margin-left: 10%">
+                <div class="row">
+                    <label style="padding-right: 2%">Name:</label>
+                    <p style="font-weight: 300">Lee</p>
+                </div>
+                <div class="row">
+                  <label style="padding-right: 2%">Surname:</label>
+                  <p style="font-weight: 300">Georges</p>
+                </div>
+                <div class="row">
+                  <label style="padding-right: 2%">E-mail:</label>
+                  <p style="font-weight: 300">lee@test.com</p>
+                </div>
+                <div class="row">
+                  <label style="padding-right: 2%">Phone:</label>
+                  <p style="font-weight: 300; text-align: left">1234 567</p>
+                </div>
+                <div class="row">
+                  <label style="padding-right: 2%">Address:</label>
+                  <p style="font-weight: 300; text-align: left; width: 250px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div style="margin: 15px">
-          <div class="row">
-            <!-- <div class="col"> -->
-              <label style="padding-right: 2%">Name:</label>
-              <p style="font-weight: 300">Lee</p>
-            <!-- </div> -->
-          </div>
-          <div class="row">
-            <label style="padding-right: 2%">Surname:</label>
-            <p style="font-weight: 300">Georges</p>
-          </div>
-          <div class="row">
-            <label style="padding-right: 2%">E-mail:</label>
-            <p style="font-weight: 300">lee@test.com</p>
-          </div>
-          <div class="row">
-            <label style="padding-right: 2%">City:</label>
-            <p style="font-weight: 300; text-align: left">Cape Town</p>
-          </div>
-          <div class="row">
-            <label style="padding-right: 2%">Country:</label>
-            <p style="font-weight: 300; text-align: left">Western Cape</p>
-          </div>
+          <!-- reciever -->
+            <div class="col-md-6">
+              <h3>Reciever</h3>
+              <div class="row">
+                <!-- <div class="col"> -->
+                  <label style="padding-right: 2%">Name:</label>
+                  <p style="font-weight: 300">Lee</p>
+                <!-- </div> -->
+              </div>
+              <div class="row">
+                <label style="padding-right: 2%">Surname:</label>
+                <p style="font-weight: 300">Georges</p>
+              </div>
+              <div class="row">
+                <label style="padding-right: 2%">E-mail:</label>
+                <p style="font-weight: 300">lee@test.com</p>
+              </div>
+              <div class="row">
+                <label style="padding-right: 2%">City:</label>
+                <p style="font-weight: 300; text-align: left">Cape Town</p>
+              </div>
+              <div class="row">
+                <label style="padding-right: 2%">Country:</label>
+                <p style="font-weight: 300; text-align: left">Western Cape</p>
+              </div>
+            </div>
         </div>
+
         <hr>
-          <table class="table table-responsive-lg table-borderless table-status" style="margin-bottom: 2%;">
+        <div class="row">
+          <table class="table table-borderless table-status" style="margin-bottom: 2%;">
             <thead class="thead-style">
               <tr>
                 <th scope="col">Product</th>
@@ -98,36 +132,50 @@ button to tracking number
               </td>
             </tfoot>
           </table>
-
+        </div>
 
           <hr>
-          <div style="margin: 15px">
+          <div>
             <div class="row">
-              <!-- <div class="col"> -->
-                <label style="padding-right: 2%">Shipping company:</label>
-                <p style="font-weight: 300">DHL</p>
-              <!-- </div> -->
-            </div>
-            <div class="row">
-              <label style="padding-right: 2%">Estimated Arrival:</label>
-              <p style="font-weight: 300">11/11/18</p>
-            </div>
-              <div class="row">
-                <label style="padding-right: 2%">Delivery Address:</label>
-                <p style="font-weight: 300; text-align: left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <div class="col-lg-6">
+                <div style="margin-left: 10%">
+                <div class="row">
+                  <!-- <div class="col"> -->
+                    <label style="padding-right: 2%">Shipping company:</label>
+                    <p style="font-weight: 300">DHL</p>
+                  <!-- </div> -->
+                </div>
+                <div class="row">
+                  <label style="padding-right: 2%">Estimated Arrival:</label>
+                  <p style="font-weight: 300">11/11/18</p>
+                </div>
+                  <div class="row">
+                    <label style="padding-right: 2%">Delivery Address:</label>
+                    <p style="font-weight: 300; text-align: left; width: 250px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                  </div>
+                </div>
               </div>
-              <hr>
-              <div class="row">
-                <label style="padding-right: 2%">Tracking Number:</label>
-                <p style="font-weight: 300">UYHGF123123</p>
-              </div>
-              <div class="row">
-                <label style="padding-right: 2%">Waybill Number:</label>
-                <p style="font-weight: 300">1343</p>
-              </div>
-          </div>
 
-            <a href="#" class="btn btn-primary">View Shipment Tracking</a>
+
+              <div class="col-lg-6">
+                  <div class="row">
+                    <!-- <div class="col"> -->
+                      <label style="padding-right: 2%">Shipping company:</label>
+                      <p style="font-weight: 300">DHL</p>
+                    <!-- </div> -->
+                  </div>
+                    <div class="row">
+                      <label style="padding-right: 2%">Tracking Number:</label>
+                      <p style="font-weight: 300">UYHGF123123</p>
+                    </div>
+                    <div class="row">
+                      <label style="padding-right: 2%">Waybill Number:</label>
+                      <p style="font-weight: 300">1343</p>
+                    </div>
+                  </div>
+                </div>
+
+            <a href="#" class="btn btn-primary" style="width:300px; margin-top: 3%">View Shipment Tracking</a>
 
           <!-- <button type="button" name="submit" class="btn btn-primary">Login</button> -->
       </form>
@@ -135,6 +183,7 @@ button to tracking number
   </div>
 </div>
 </div>
+  </div>
 
 <script>
 $(document).ready(function(){
