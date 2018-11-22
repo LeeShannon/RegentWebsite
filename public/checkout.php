@@ -29,10 +29,10 @@ require_once("../resources/cart.php");
               <a href="Website/index.html">Home</a>
             </li>
             <li>
-              <a href="#">test</a>
+              <a href="products.php">Products</a>
             </li>
             <li >
-              <a href="#">test</a>
+              <a href="user.php">Edit Details</a>
             </li>
           </ul>
         </div>
