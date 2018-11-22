@@ -1,3 +1,10 @@
+<?php 
+
+require_once("../resources/config.php"); 
+require_once("../resources/cart.php"); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -52,7 +59,7 @@
 
     <div class="container-fluid">
       <h2>shopping cart</h2>
-      <form class="" action="checkout.php" method="post">
+      <form class="" action="invoice.php" method="post">
           <div class="col-lg-12 table-responsive">
             <table class="table items-table">
               <thead class="thead-style">
@@ -61,11 +68,14 @@
                   <th scope="col">Name</th>
                   <th scope="col">Quantity</th>
                   <th scope="col">Price</th>
-                  <th scope="col">Total</th>
+                  <th scope="col">Subtotal</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
+              
+              <?php cart(); ?>
+<!--
                 <tr>
                   <td class="static">
                     <img class="item-cart" style="object-fit: cover" src="" >
@@ -73,12 +83,8 @@
                   <td> name </td>
                   <td style="width: 200px">
 
-                    <div class="form-group row">
-                      <div class="col-sm-7">
-                        <input type="number" name="quantity" value="1" placeholder="100" min="1" class="form-control" />
-                      </div>
-                        <p>box</p>
-                    </div>
+                        <p>3 box</p>
+                    
 
                   </td>
                   <td>R 100</td>
@@ -86,11 +92,18 @@
                     R 100
                   </td>
                   <td>
-                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Remove">
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Substract">
+                     <i class="fas fa-minus-circle" style="color: black; font-size: 25px"></i>
+                   </a>
+                   <a href="#" data-toggle="tooltip" data-placement="bottom" title="Add">
+                     <i class="fas fa-plus-circle" style="color: black; font-size: 25px"></i>
+                   </a>
+                   <a href="#" data-toggle="tooltip" data-placement="bottom" title="Remove">
                      <i class="fas fa-times-circle" style="color: black; font-size: 25px"></i>
                    </a>
                   </td>
                 </tr>
+-->
               </tbody>
             </table>
           </div>
@@ -103,21 +116,25 @@
                     <label for="exampleFormControlSelect1" style="padding-top: 6px">Shipping Company:</label>
                   <!-- </div> -->
                   <div class="col-sm-2">
-                    <select name="shippingCompany" class="form-control" id="exampleFormControlSelect1">
-                      <option>DHL</option>
-                      <option>Turner's Shipping</option>
-                      <option>Another one</option>
-                    </select>
+                    
+                    
+                    <select name="shipment_company" id="" class="form-control">
+            <option value="">Select Category</option>
+            <?php show_shipment_checkout_page(); ?>
+           
+        </select>
                   </div>
                 </div>
 
             <div class="row">
               <div class="col-md-6">
-                <h2 style="padding-left: 2%; font-size: 20px;">Total: R 100</h2>
+                <h2 style="padding-left: 2%; font-size: 20px;">Total: R <?php 
+    
+    echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "0" ?></h2>
               </div>
-              <div class="col-md-6 d-flex justify-content-end">
-                <input type="submit" name="checkout" value="Proceed to Checkout" id="button" class="btn btn-default">
-              </div>
+             
+              
+              <?php echo show_proceed_button();?>
             </div>
           </div>
         </form>

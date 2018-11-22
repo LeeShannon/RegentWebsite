@@ -60,17 +60,12 @@ require_once("../resources/config.php");
         <li class="nav-item" >
           <a class="nav-link" href="products.php" style="color: black !important; text-shadow: none" >All</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link active" href="fruits.php" style="color: black !important; text-shadow: none" >Fruits</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="veg.php" style="color: black !important; text-shadow: none">Vegetables</a>
-        </li>
+         <?php get_categories();?>
       </ul>
 
 
-     <div class="row"  style="margin-top: 1%">
-         <?php get_products(); ?>
+     <div class="row" style="margin-top: 1%">
+         <?php get_products_in_cat_page(); ?>
 
      </div>
     </div>

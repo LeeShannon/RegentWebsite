@@ -1,8 +1,13 @@
-<?php
+<?php 
 
-require_once("../resources/config.php");
+require_once("../resources/config.php"); 
+require_once("../resources/cart.php"); 
 
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -34,7 +39,7 @@ button to tracking number
 
   <div class="row d-flex justify-content-left" style="margin: 0;">
     <div >
-      <a href="cart.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Back">
+      <a href="checkout.php" class="cart" data-toggle="tooltip" data-placement="bottom" title="Back">
           <i class="fas fa-chevron-circle-left" style="font-size: 25px"></i>
       </a>
     </div>
@@ -49,6 +54,36 @@ button to tracking number
      </div>
      <hr>
       <form id="Login">
+<<<<<<< HEAD
+        
+        <?php 
+  process_customer_report();
+  
+?>
+
+        <div style="margin: 15px">
+          <div class="row">
+            <!-- <div class="col"> -->
+              <label style="padding-right: 2%">Name:</label>
+              <p style="font-weight: 300">Lee</p>
+            <!-- </div> -->
+          </div>
+          <div class="row">
+            <label style="padding-right: 2%">Surname:</label>
+            <p style="font-weight: 300">Georges</p>
+          </div>
+          <div class="row">
+            <label style="padding-right: 2%">E-mail:</label>
+            <p style="font-weight: 300">lee@test.com</p>
+          </div>
+          <div class="row">
+            <label style="padding-right: 2%">City:</label>
+            <p style="font-weight: 300; text-align: left">Cape Town</p>
+          </div>
+          <div class="row">
+            <label style="padding-right: 2%">Country:</label>
+            <p style="font-weight: 300; text-align: left">Western Cape</p>
+=======
         <div class="row">
           <!-- supplier -->
           <div class="col-md-6">
@@ -77,6 +112,7 @@ button to tracking number
                 </div>
               </div>
             </div>
+>>>>>>> 05bc49d4a8b175ab279ea6e472925a4e2f41f201
           </div>
 
           <!-- reciever -->
