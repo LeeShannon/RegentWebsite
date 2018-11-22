@@ -27,6 +27,9 @@
             <li >
               <a href="user.php">Edit Details</a>
             </li>
+            <li>
+              <a href="transactions.php">Transaction History</a>
+            </li>
           </ul>
         </div>
       </div>

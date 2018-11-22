@@ -14,6 +14,7 @@ require_once("../resources/config.php");
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="../assets/css/login.css" />
   <link rel="stylesheet" href="../assets/css/nav.css" />
+  <link rel="stylesheet" href="../assets/css/cart.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -66,74 +67,38 @@ label {
 
   <div class="container-fluid">
   <div class="login-form" style="margin: 0 auto">
-  <div class="main-div">
+  <div class="invoice">
       <div class="panel">
-     <h1>User Details</h1>
-     <p>Edit your user details</p>
+     <h1>Transaction History</h1>
+     <p>Your previous order details</p>
      </div>
 
      <!-- placeholders and values should be the users current info -->
-      <form id="Login" method="post">
-          <div class="form-group row">
-            <label class="col-sm-4"> Name:</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="inputEmail" name="fname" placeholder="User's Name" >
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4"> Surname:</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="inputEmail" name="sname" placeholder="Surname" >
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4"> Phone:</label>
-            <div class="col-sm-8">
-              <input type="number" class="form-control" id="inputEmail" name="phone" placeholder="Phone" >
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4"> New Email:</label>
-            <div class="col-sm-8">
-              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email Address" >
-            </div>
-          </div>
+     <div class="row">
+       <table class="table table-borderless table-status" style="margin-bottom: 2%;">
+         <thead class="thead-style">
+           <tr>
+             <th scope="col">Order ID</th>
+             <th scope="col">Product</th>
+             <th scope="col">Quantity</th>
+             <th scope="col">Price</th>
+             <th scope="col">Order Date</th>
+             <th scope="col">Shipping company</th>
+           </tr>
+         </thead>
+         <tbody >
+           <tr>
+             <td>123</td>
+             <td>test</td>
+             <td>test</td>
+             <td>R 0000</td>
+             <td>22/11/18</td>
+             <td>DHL</td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
 
-          <hr>
-          <div class="form-group row">
-            <label class="col-sm-4"> New Password:</label>
-            <div class="col-sm-8">
-              <input type="password" class="form-control" id="inputEmail" name="password" placeholder="Password" >
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4" style="padding-top: 0px;"> Confirm Password:</label>
-            <div class="col-sm-8">
-              <input type="password" class="form-control" id="inputEmail" name="password2" placeholder="Email Address" >
-            </div>
-          </div>
-
-          <hr>
-          <div class="form-group row">
-            <label class="col-sm-4"> City:</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="inputEmail" name="city" placeholder="City" >
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4"> Country:</label>
-            <div class="col-sm-8">
-              <input type="text" class="form-control" id="inputEmail" name="country" placeholder="Country" >
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-4" style="padding-top: 0px;"> Shipping Address:</label>
-            <div class="col-sm-8">
-              <textarea class="form-control" rows="5" name="address"></textarea>
-            </div>
-          </div>
-          <button type="submit" name="submit" class="btn btn-primary">Save</button>
-      </form>
     </div>
   </div>
 </div>
